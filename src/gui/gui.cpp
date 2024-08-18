@@ -60,6 +60,10 @@ void gui::run() {
     BOOL value = TRUE;
     ::DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &value, sizeof(value));
 
+    if (const char* video_path = std::getenv("video_path")) {
+        add_file(std::filesystem::path(std::get_env("video_path")));
+    }
+
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
 
