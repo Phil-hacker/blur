@@ -63,6 +63,7 @@ void gui::run() {
     if (const char* video_path = std::getenv("video_path")) {
         add_file(std::filesystem::path(std::get_env("video_path")));
     }
+    
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
